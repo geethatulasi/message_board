@@ -1,0 +1,16 @@
+<div class="container">  
+  <h3><%= @message.title %></h3>
+  <p><i>posted-by<%= @message.user.email %> <%= time_ago_in_words(@message.created_at) %></i></p>
+  <%= @message.description %>
+  <h3>comments</h3>
+  <%= render @message.comments %>
+  <h3>Reply to message </h3>
+  <%= render 'comments/form' %>
+  <% if user_signed_in? %>
+    <% if @message.user_id == current_user.id %>
+    <%= link_to 'edit',edit_message_path(@message) %>
+    <%= link_to 'delete',message_path(@message),method: :delete,data:{confirm: "Are you sure to delete?"} %>
+    <% end %>
+  <% end %>
+</div>
+ 

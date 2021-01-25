@@ -1,0 +1,21 @@
+<div class="container">  
+  <div class="row">
+    <% @messages.each do |message| %>
+      <div class="col-sm-4">
+        <div class="card message-card">
+          <div class="card-body">
+            <h3 class="card-title"><%= message.title %></h3>
+          </div>
+          <p class="card-text desc">
+            <%= message.description %>
+          </p>
+          <div class="msg-link">
+            <div class="text-center">
+              <%= link_to 'show',message_path(message) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

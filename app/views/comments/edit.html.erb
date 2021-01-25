@@ -1,0 +1,5 @@
+<h3>Edit message</h3>
+<%= simple_form_for([@message,@comment]) do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
