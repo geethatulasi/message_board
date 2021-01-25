@@ -65,3 +65,8 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'pry'
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end

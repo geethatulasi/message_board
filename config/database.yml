@@ -49,4 +49,5 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: message_board_production
